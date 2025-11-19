@@ -1,0 +1,51 @@
+list1 = [1, 2, 3, 4, 3]
+list2 = [3, 4, 5, 6]
+res = []
+seen = set()
+for x in list1:
+    if x in list2 and x not in seen:
+        res.append(x)
+        seen.add(x)
+print(res)
+
+
+s = "the cat and the hat"
+words = s.split()
+counts = {}
+for w in words:
+    counts[w] = counts.get(w, 0) + 1
+print(counts)
+
+
+mat = [[1, 2], [3, 4], [5, 6]]
+transpose = [list(col) for col in zip(*mat)]
+print(transpose)
+
+
+s = "hello world python"
+rev = " ".join(s.split()[::-1])
+print(rev)
+
+
+numbers = [4, 2, 4, 5, 2, 3, 5, 1]
+result = []
+seen = set()
+for x in numbers:
+    if x not in seen:
+        result.append(x)
+        seen.add(x)
+print(result)
+
+
+arr = [2, 4, 3, 5, 7, 8, -1]
+target = 6
+seen = {}
+pairs = set()
+
+for x in arr:
+    need = target - x
+       if need in seen:
+        pair = tuple(sorted((x, need)))
+        pairs.add(pair)
+        seen[x] = seen.get(x, 0) + 1
+print(sorted(list(pairs)))
